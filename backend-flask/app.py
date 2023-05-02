@@ -160,9 +160,9 @@ def data_create_message():
 @xray_recorder.capture('activities_home')
 # @aws_auth.authentication_required
 def data_home():
-  access_token = CognitoJwtToken.extract_access_token(request.headers)
+  access_token = cognito_jwt_token.extract_access_token(request.headers)
   try:
-    claims = cognito_jwt_token .token_service.verify(access_token)
+    claims = cognito_jwt_token.token_service.verify(access_token)
   except TokenVerifyError as e:
     _ = request.data
     abort(make_response(jsonify(message=str(e)), 401))
