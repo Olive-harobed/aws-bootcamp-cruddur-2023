@@ -5,6 +5,8 @@
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	
+	"postCreateCommand": "cd frontend-react-js && npm install",
+
 	"features": {
 		"ghcr.io/devcontainers/features/aws-cli:1": {}
 	},
